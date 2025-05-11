@@ -1,0 +1,183 @@
+/* my global styles */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans";
+}
+:root {
+  --background-clr: #f4f7fd;
+  --primary-clr: #000112;
+  --secondary-clr: #fff;
+  --third-clr: #828fa3;
+  --accent-clr: #635fc7;
+}
+body {
+  background-color: var(--background-clr);
+}
+/* styles for the side bar */
+.side-bar {
+  display: none;
+}
+
+/* Main Layout header section */
+.main-header {
+  background-color: var(--secondary-clr);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding-left: 16px;
+}
+.main-header img {
+  width: 24px;
+  height: 25px;
+}
+.main-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* cards container */
+.cards-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 32px auto;
+}
+.cards {
+  margin-bottom: 30px;
+}
+
+/* the TODO, DOING and DONE heading styles */
+.task-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.task-heading span {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+.task-heading h4 {
+  color: var(--third-clr);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* the color styles for the TODO, DOING and DONE heading styles */
+.todo-clr {
+  background-color: #49c4e5;
+}
+.doing-clr {
+  background-color: #8471f2;
+}
+.done-clr {
+  background-color: #67e2ae;
+}
+
+/* the cards styles */
+.task-card {
+  background-color: var(--secondary-clr);
+  height: 60px;
+  padding: 19px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-bottom: 21px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.task-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--accent-clr);
+  color: var(--secondary-clr);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+}
+
+/* media querys */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  /* side bar styles */
+  .side-bar {
+    display: block;
+    background-color: var(--secondary-clr);
+    width: 250px;
+    border-right: 1px solid #e4ebfa;
+  }
+  .side-bar img {
+    width: 152.53px;
+    height: 25.22px;
+    margin-top: 37px;
+    margin-left: 27px;
+  }
+  .side-bar h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--third-clr);
+    margin-top: 50px;
+    margin-left: 27px;
+    padding: 0px 12px 0px 60px;
+  }
+  .side-bar button {
+    margin-top: 15px;
+    width: 190px;
+    height: 48px;
+    border-radius: 0 30px 30px 0;
+    border: none;
+    background-color: var(--accent-clr);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--secondary-clr);
+  }
+  .side-bar button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+    background-color: var(--primary-clr);
+  }
+  /* the header styles */
+  .main-header {
+    height: 96px;
+    border-bottom: 1px solid #e4ebfa;
+  }
+  .main-header img {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* side bar styles */
+  .side-bar {
+    display: block;
+    background-color: var(--secondary-clr);
+    width: 300px;
+  }
+  .side-bar button {
+    width: 276px;
+  }
+  .main-header {
+    height: 96px;
+    width: 102.9%;
+  }
+
+  .main-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
